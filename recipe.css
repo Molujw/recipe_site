@@ -8,12 +8,13 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     }
 
-
+/* Assim o padrão é mobile. Em todos os sites o mobile deve ser o padrão,
+pois é como a maioria das pessoas consomem conteúdo.*/
 div.content{
     background-color: white;
-    margin: 60px 10% 80px 10%;
-    padding: 0px 30px 30px 30px ;
-    min-width: 350px;
+    margin: 30px 8px 80px 8px;
+    padding: 0px 8px 20px 8px ;
+    /*min-width: 350px;*/
     /*overflow: auto;*/ /*Assim ele ajusta o tamanho ao conteúdo no caso de muitos ítens na tabela modo de preparo 
                     ou usamos o * para selecionar tudo. Está no final.*/
     box-shadow: 0px 0px 8px 10px rgba(0, 0, 0, 0.1);
@@ -72,7 +73,7 @@ div.info{
     position: relative;
 
 }
-
+/* PADRÃO MOBILE - TODOS OS TABLE INFO*/
 table.info{
     position:absolute;
     bottom:0%;
@@ -91,7 +92,7 @@ table.info td{
 
 table.info th{
     vertical-align: bottom;
-    padding: 8px;
+    padding: 4px;
     font-size: 14px;
 }
 
@@ -104,7 +105,7 @@ img.info{
 }
 
 div.col{ /* agrupamos comandos comuns num estulo */
-    width: 45%;
+    width: 100%;
     margin-top: 20px;
 }
 
@@ -118,12 +119,7 @@ div.col h2{
 
 div.col1{
     display: inline-block;
-    margin-right: 10%;
     margin-bottom: 20px;
-}
-
-div.col2{
-    float: right;
 }
 
 div.ingredients p {
@@ -163,3 +159,46 @@ table.instructions tr{ /* assim deixo a linha com um valor mínimo e não distor
     height: 40px;
 }
 
+/* Adaptado para desktop. @media significa se a tela.... PARA evitar linhas de código
+duplicadas tiramos os valores padrão, pode deixar na parte mobile mesmo e alteramos apenas
+os valores específicos para a tela desktop ou a tela desejada.*/
+@media only screen and (min-width: 768px) {
+    div.content{
+        margin: 60px 10% 80px 10%;
+        padding: 0px 30px 30px 30px ;
+        min-width: 350px;
+    }
+    table.info{
+        height: 80px;                
+    }
+    
+    /* all the td of the table that has a info class */
+    table.info td{
+        font-size: 14px;
+    }
+    
+    table.info th{
+        font-size: 16px;
+    }
+    
+    div.col{ /* agrupamos comandos comuns num estulo */
+        width: 45%;
+    }
+     
+    div.col1{
+        margin-right: 10%;
+    }
+    
+    div.col2{
+        float: right;
+    }
+}
+
+/* Telas muito grandes */
+@media only screen and (min-width: 900px) {
+    div.content{
+        margin-left:  auto;
+        margin-right:  auto;
+        width: 650px;
+    }
+}
